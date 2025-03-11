@@ -47,6 +47,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install awscli zappa
+      - name: Pruebas Unitarias 
+        run: |
+          source venv/bin/activate 
           pytest
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
