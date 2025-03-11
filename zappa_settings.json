@@ -1,0 +1,51 @@
+{
+    "dev": {
+        "app_function": "parcial.lambda_handler",
+        "aws_region": "us-east-1",
+        "exclude": [
+            "boto3",
+            "dateutil",
+            "botocore",
+            "s3transfer",
+            "concurrent"
+        ],
+        "profile_name": "default",
+        "project_name": "parcial2",
+        "runtime": "python3.10",
+        "s3_bucket": "parcialconexion",
+        "keep_warm": false,
+        "apigateway_enabled": false,
+        "manage_roles": false,
+        "role_name": "LabRole"
+    },
+    "dev_punto2": {
+        "app_function": "punto2.lambda_handler",
+        "aws_region": "us-east-1",
+        "exclude": [
+            "boto3",
+            "dateutil",
+            "botocore",
+            "s3transfer",
+            "concurrent"
+        ],
+        "profile_name": "default",
+        "project_name": "parcial2_punto2",
+        "runtime": "python3.10",
+        "events": [
+            {
+                "event_source": {
+                    "arn": "arn:aws:s3:::parcialconexion",
+                    "events": [
+                        "s3:ObjectCreated:*"
+                    ]
+                },
+                "function": "punto2.lambda_handler"
+            }
+        ],
+        "s3_bucket": "parcialconexion",
+        "keep_warm": false,
+        "apigateway_enabled": false,
+        "manage_roles": false,
+        "role_name": "LabRole"
+    }
+}
