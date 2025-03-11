@@ -69,4 +69,4 @@ jobs:
       - name: Check Zappa Status
         run: |
           source venv/bin/activate  # Activarlo
-          zappa status devParser
+          zappa status dev
