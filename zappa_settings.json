@@ -40,6 +40,10 @@
                     ]
                 },
                 "function": "punto2.lambda_handler"
+            },
+            {
+                "schedule": "cron(0 9 ? * 2 *)",
+                "function": "punto2.lambda_handler"
             }
         ],
         "s3_bucket": "parcialconexion",

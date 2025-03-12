@@ -69,3 +69,4 @@ def test_procesar_archivos(s3_mock, monkeypatch):
 
     assert contenido_csv.strip() == expected_content.strip(), f"El contenido no coincide: {contenido_csv}"
     assert "Proceso completado" in resultado
+    
